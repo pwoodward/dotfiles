@@ -1,2 +1,2 @@
 # dotfiles
-Dotfiles and devimage
+Configuration Files
