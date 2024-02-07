@@ -1,0 +1,44 @@
+import = ["/home/rpt/.config/alacritty/themes/catppuccin-mocha.toml"]
+live_config_reload = true
+
+[cursor]
+style = "Block"
+vi_mode_style = "Beam"
+
+[font]
+size = 13
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Regular Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+dynamic_title = true
+opacity = 0.9
+startup_mode = "Maximized"
+
+[window.padding]
+x = 10
+y = 10

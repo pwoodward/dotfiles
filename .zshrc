@@ -10,7 +10,7 @@ fi
 
 # User configuration
 export JAVA_HOME=/usr/local/opt/java11
-export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/tools/bin:$HOME/.cargo.bin"
 
 export EDITOR=nvim
 
@@ -23,6 +23,8 @@ export TERM_KEEP_HIDE_LOGO="1"
 
 alias vim=nvim
 alias tk=term_keep
+
+eval "$(jump shell)"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
