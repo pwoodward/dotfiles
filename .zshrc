@@ -10,32 +10,76 @@ fi
 
 # User configuration
 export JAVA_HOME=/usr/local/opt/java11
-export PATH="$PATH:/usr/local/bin:$HOME/tools/bin:$HOME/.cargo.bin"
+export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
 
 export EDITOR=nvim
 
 export TERM_KEEP_DB_PATH=/Users/woodward/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
 export TERM_KEEP_HIDE_LOGO="1"
 
+set extended_glob
+
 # You may need to manually set your 
 # language environment
 # export LANG=en_US.UTF-8
 
 alias vim=nvim
+alias nv=nvim
 alias tk=term_keep
+alias ls="ls --color"
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
 
-eval "$(jump shell)"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src $fpath)
 
-source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+ZSH=${ZSH:-${ZDOTDIR:-$HOME/.config/zsh}}
+ZSH_CUSTOM=${ZSH_CUSTOM:-$ZSH/custom}
+# Use antidote.lite - a Zsh micro plugin manager based on zsh_unplugged.
+if [[ ! -e $ZSH/lib/antidote.lite.zsh ]]; then
+  mkdir -p $ZSH/lib
+  curl -fsSL -o $ZSH/lib/antidote.lite.zsh \
+    https://raw.githubusercontent.com/mattmc3/zsh_unplugged/main/antidote.lite.zsh
+fi
+
+# load any files in your lib directory
+for zlib in $ZSH/lib/*.zsh(N); source $zlib
+unset zlib
+
+myprompts=(romkatv/powerlevel10k)
 
 # Plugins
-source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/plugins/catppuccin_mocha-zsh-syntax-highlighting.zsh
+myplugins=( 
+  zsh-users/zsh-completions
+  jeffreytse/zsh-vi-mode
+  zsh-users/zaw
+  mattmc3/zephyr/plugins/prompt
 
-source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-autosuggestions
+  )
+# clone and load
+plugin-clone $myplugins $myprompts 
+plugin-load --kind fpath $myprompts
+plugin-load $myplugins
+
+# Load Git completion
+zstyle ':completion:*:*:git:*' script ~/.config/zsh/plugins/git/git-completion.bash
+fpath=(~/.config/zsh/plugins/git/ $fpath)
+
+autoload -Uz compinit && compinit
+
+# node version management
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# prompt setting
+prompt powerlevel10k
+
+# To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
+[[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

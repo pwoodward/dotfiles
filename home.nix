@@ -15,6 +15,8 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  fonts.fontconfig.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -37,6 +39,9 @@
     pkgs.autojump
     pkgs.jq
     pkgs.lf
+    pkgs.fd
+
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Hack" ]; })
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -83,7 +88,7 @@
   #  /etc/profiles/per-user/woodward/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "nvim";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
