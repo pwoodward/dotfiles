@@ -26,8 +26,10 @@ set extended_glob
 alias vim=nvim
 alias nv=nvim
 alias tk=term_keep
-alias ls="ls --color"
+alias ls="eza"
+alias ll="eza -l"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
+alias c=bat
 
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -55,6 +57,7 @@ myplugins=(
   jeffreytse/zsh-vi-mode
   zsh-users/zaw
   mattmc3/zephyr/plugins/prompt
+  joshskidmore/zsh-fzf-history-search
 
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search

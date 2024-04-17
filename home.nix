@@ -40,6 +40,8 @@
     pkgs.jq
     pkgs.lf
     pkgs.fd
+    pkgs.eza
+    pkgs.bat
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Hack" ]; })
 
