@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -49,7 +49,7 @@ fi
 for zlib in $ZSH/lib/*.zsh(N); source $zlib
 unset zlib
 
-myprompts=(romkatv/powerlevel10k)
+#myprompts=(romkatv/powerlevel10k)
 
 # Plugins
 myplugins=( 
@@ -64,8 +64,8 @@ myplugins=(
   zsh-users/zsh-autosuggestions
   )
 # clone and load
-plugin-clone $myplugins $myprompts 
-plugin-load --kind fpath $myprompts
+plugin-clone $myplugins #$myprompts 
+#plugin-load --kind fpath $myprompts
 plugin-load $myplugins
 
 # Load Git completion
@@ -80,9 +80,13 @@ source $(brew --prefix nvm)/nvm.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(zoxide init zsh)"
+
 # prompt setting
-prompt powerlevel10k
+#prompt powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.zsh/.p10k.zsh.
-[[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+#[[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
+#typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# Starship
+eval "$(starship init zsh)"
