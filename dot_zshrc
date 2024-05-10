@@ -17,6 +17,7 @@ alias ls="eza"
 alias ll="eza -l"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
 alias c=bat
+alias tk=term_keep
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src $fpath)
 
@@ -32,8 +33,6 @@ fi
 # load any files in your lib directory
 for zlib in $ZSH/lib/*.zsh(N); source $zlib
 unset zlib
-
-#myprompts=(romkatv/powerlevel10k)
 
 # Plugins
 myplugins=( 
@@ -51,6 +50,17 @@ myplugins=(
 plugin-clone $myplugins
 plugin-load $myplugins
 
+# darwin only
+export JAVA_HOME=/usr/local/opt/java11
+export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
+
+export TERM_KEEP_DB_PATH=/Users/woodward/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
+export TERM_KEEP_HIDE_LOGO="1"
+
+# node version management
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/plugins/git/git-completion.bash
 fpath=(~/.config/zsh/plugins/git/ $fpath)
@@ -60,6 +70,7 @@ autoload -Uz compinit && compinit
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
 
 # Starship
 eval "$(starship init zsh)"
