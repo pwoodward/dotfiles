@@ -50,6 +50,7 @@ myplugins=(
 plugin-clone $myplugins
 plugin-load $myplugins
 
+{{ if eq .chezmoi.os "darwin" }}
 # darwin only
 export JAVA_HOME=/usr/local/opt/java11
 export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
@@ -60,6 +61,7 @@ export TERM_KEEP_HIDE_LOGO="1"
 # node version management
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+{{ end }}
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.config/zsh/plugins/git/git-completion.bash
