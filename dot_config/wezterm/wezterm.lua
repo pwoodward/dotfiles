@@ -23,5 +23,11 @@ config.font_size = 15.0
 
 config.enable_kitty_keyboard = true
 
+config.visual_bell = {
+	fade_in_duration_ms = 75,
+	fade_out_duration_ms = 75,
+	target = "CursorColor",
+}
+
 -- and finally, return the configuration to wezterm
 return config

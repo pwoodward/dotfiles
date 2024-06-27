@@ -55,12 +55,16 @@ plugin-load $myplugins
 export JAVA_HOME=/usr/local/opt/java11
 export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
 
-export TERM_KEEP_DB_PATH=/Users/woodward/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
+export TERM_KEEP_DB_PATH=~/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
 export TERM_KEEP_HIDE_LOGO="1"
 
 # node version management
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+
+# Go config
+export GOBIN=~/tools/gobin
+export PATH="$PATH:$HOME/tools/gobin"
 {{ end }}
 
 # Load Git completion
