@@ -2,7 +2,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
+tap "FelixKratz/formulae"
 
 # Command line apps
 brew "autojump"
@@ -18,8 +18,6 @@ brew "go"
 brew "podman"
 brew "ripgrep"
 brew "tmux"
-brew "yabai"
-brew "skhd"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
@@ -34,9 +32,11 @@ brew "bash-language-server"
 brew "yaml-language-server"
 brew "docker-ls"
 
+# Aerospace
+brew "borders" if OS.mac?
+cask "nikitabobko/tap/aerospace" if OS.mac?
 
 # Gui apps
-cask "alacritty"
 cask "wezterm"
 cask "firefox"
 cask "font-fira-code-nerd-font"
