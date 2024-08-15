@@ -5,22 +5,42 @@ tap "homebrew/services"
 tap "FelixKratz/formulae"
 
 # Command line apps
-brew "autojump"
+#
+
 brew "neovim"
-brew "nvm"
 brew "jq"
 brew "lf"
-brew "gradle"
-brew "gradle@7"
-brew "gradle@6"
-brew "openjdk@11"
 brew "go"
 brew "podman"
 brew "ripgrep"
 brew "tmux"
+brew "zellij"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+
+# Bluefin recommended tools
+brew "atuin"
+brew "bat"
+brew "direnv"
+brew "dysk"
+brew "eza"
+brew "fd"
+brew "gh"
+brew "glab"
+brew "rg"
+brew "shellcheck"
+brew "tealdeer"
+brew "ugrep"
+brew "yq"
+brew "zoxide"
+
+# work dev tools
+brew "gradle"
+brew "gradle@7"
+brew "gradle@6"
+brew "openjdk@11"
+brew "nvm"
 
 # Helix LSPs
 brew "helix"
@@ -32,9 +52,9 @@ brew "bash-language-server"
 brew "yaml-language-server"
 brew "docker-ls"
 
-# Aerospace
-brew "borders" if OS.mac?
-cask "nikitabobko/tap/aerospace" if OS.mac?
+# Mac only
+brew "borders"
+cask "nikitabobko/tap/aerospace"
 
 # Gui apps
 cask "wezterm"
