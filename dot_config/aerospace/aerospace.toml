@@ -183,8 +183,19 @@ alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+# Fullscreen:
+alt-m = 'fullscreen'
+
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+
+[workspace-to-monitor-force-assignment]
+1 = 1
+2 = 2
+3 = 2
+7 = 1
+8 = 1
+9 = 1
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
