@@ -77,7 +77,14 @@ autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+{{ if eq .chezmoi.os "darwin" }}
 [ -f ~/.jfrog/jfrog_zsh_completion ] && source ~/.jfrog/jfrog_zsh_completion
+
+# Ruby stuff for Jekyll
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.5
+{{ end }}
 
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"

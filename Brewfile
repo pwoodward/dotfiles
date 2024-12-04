@@ -52,6 +52,10 @@ brew "bash-language-server"
 brew "yaml-language-server"
 brew "docker-ls"
 
+# Jekyll
+brew "chruby"
+brew "ruby-install"
+
 # Mac only
 brew "borders"
 cask "nikitabobko/tap/aerospace"
