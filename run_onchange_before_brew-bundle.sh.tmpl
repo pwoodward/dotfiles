@@ -1,7 +1,23 @@
-{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range .packages.all.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ end -}}
+EOF
+
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF2
 # taps
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -105,6 +121,6 @@ cask "vscodium"
 cask "wezterm"
 # need to uninstall chrome to install this version
 #cask "google-chrome"
-EOF
+EOF2
 
 {{ end -}}

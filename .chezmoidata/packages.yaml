@@ -1,0 +1,33 @@
+packages:
+  all:
+    brews:
+     - 'atuin'
+     - 'bat'
+     - 'btop'
+     - 'chezmoi'
+     - 'eza'
+     - 'fzf'
+     - 'git'
+     - 'helix'
+     - 'jq'
+     - 'lazygit'
+     - 'neovim'
+     - 'ripgrep'
+     - 'tmux'
+     - 'tree-sitter'
+     - 'starship'
+     - 'yq'
+     - 'zellij'
+     - 'zoxide'
+     - 'zsh'
+     - 'zsh-completions'
+     - 'zsh-syntax-highlighting'
+  linux:
+    brews:
+     - 'lua'
+     - 'luajit'
+  darwin:
+    brews:
+    - 'awscli'
+    casks:
+    - 'wezterm'
