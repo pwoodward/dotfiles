@@ -18,7 +18,7 @@ end)
 
 config.color_scheme = "Tokyo Night"
 
-config.font = wezterm.font("FiraCode Nerd Font", { weight = "Regular" })
+config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
 config.font_size = 15.0
 
 config.enable_kitty_keyboard = true
