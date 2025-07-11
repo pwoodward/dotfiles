@@ -95,6 +95,5 @@ packages:
     #    - 'google-chrome'
     taps:
       - "homebrew/bundle"
-      - "homebrew/cask-fonts"
       - "homebrew/services"
       - "minio/stable"
