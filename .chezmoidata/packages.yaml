@@ -48,7 +48,6 @@ packages:
       - "fd"
       - "gdb"
       - "gh"
-      - "gradle"
       - "helm"
       - "jdtls"
       - "jless"
@@ -80,6 +79,7 @@ packages:
     casks:
       - "wezterm"
       - "ghostty"
+      - "devpod"
       - "nikitabobko/tap/aerospace"
       - "firefox"
       - "font-fira-code-nerd-font"
@@ -88,9 +88,8 @@ packages:
       - "karabiner-elements"
       - "notunes"
       - "podman-desktop"
-      - "semeru-jdk-open"
+      - "semeru-jdk-open@17"
       - "vimr"
-      - "visual-studio-code"
       - "wezterm"
     #    - 'google-chrome'
     taps:

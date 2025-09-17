@@ -17,6 +17,7 @@ alias vim=nvim
 alias nv=nvim
 alias ls="eza"
 alias ll="eza -l"
+alias la="eza -al"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
 alias c=bat
 alias tk=term_keep
@@ -54,8 +55,11 @@ plugin-load $myplugins
 
 {{ if eq .chezmoi.os "darwin" }}
 # darwin only
+alias kube="kubectl --kubeconfig ~/tmp/servers/cur.yaml -n aiops"
+alias kubee="kubectl --kubeconfig ~/tmp/servers/engolo.yaml -n aiops"
+alias kubel="kubectl --kubeconfig ~/tmp/servers/laamb.yaml -n aiops"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/ibm-semeru-open-17.jdk/Contents/Home
-export PATH="$PATH:/usr/local/bin:$HOME/tools/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/tools/bin:/usr/local/opt/postgresql@17/bin"
 export GOPRIVATE=github.ibm.com
 
 export TERM_KEEP_DB_PATH=~/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
@@ -68,6 +72,11 @@ source $(brew --prefix nvm)/nvm.sh
 # Go config
 export GOBIN=~/tools/gobin
 export PATH="$PATH:$HOME/tools/gobin"
+
+# Ruby stuff for Jekyll
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.3.5
 {{ end }}
 
 # Load Git completion
@@ -77,15 +86,6 @@ fpath=(~/.config/zsh/plugins/git/ $fpath)
 autoload -Uz compinit && compinit
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-{{ if eq .chezmoi.os "darwin" }}
-[ -f ~/.jfrog/jfrog_zsh_completion ] && source ~/.jfrog/jfrog_zsh_completion
-
-# Ruby stuff for Jekyll
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.5
-{{ end }}
 
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
