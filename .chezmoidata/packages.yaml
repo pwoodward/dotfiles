@@ -37,7 +37,6 @@ packages:
     brews:
   darwin:
     brews:
-      - "awscli"
       - "cassandra"
       - "couchdb"
       - "delve"
