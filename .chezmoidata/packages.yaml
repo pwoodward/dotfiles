@@ -76,6 +76,7 @@ packages:
       - "chruby"
       - "ruby-install"
       - "borders"
+      - "yubico-piv-tool"
     casks:
       - "wezterm"
       - "ghostty"
@@ -90,9 +91,6 @@ packages:
       - "podman-desktop"
       - "semeru-jdk-open@17"
       - "vimr"
-      - "wezterm"
     #    - 'google-chrome'
     taps:
-      - "homebrew/bundle"
-      - "homebrew/services"
       - "minio/stable"
