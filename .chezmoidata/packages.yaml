@@ -89,6 +89,7 @@ packages:
       - "podman-desktop"
       - "semeru-jdk-open@17"
       - "vimr"
-    #    - 'google-chrome'
+      - "google-chrome"
     taps:
       - "minio/stable"
+      - "FelixKratz/formulae"

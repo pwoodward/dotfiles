@@ -25,3 +25,11 @@ chezmoi init https://github.com/pwoodward/dotfiles.git
 ## Additional Information
 
 [Chezmoi quickstart](https://www.chezmoi.io/quick-start/)
+
+## Work specific setup
+
+- 1Password
+- Box drive
+- Slack
+- Teams
+- Office
