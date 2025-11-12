@@ -24,6 +24,8 @@ alias tk=term_keep
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src $fpath)
 
+autoload -U add-zsh-hook
+
 ZSH=${ZSH:-${ZDOTDIR:-$HOME/.config/zsh}}
 ZSH_CUSTOM=${ZSH_CUSTOM:-$ZSH/custom}
 # Use antidote.lite - a Zsh micro plugin manager based on zsh_unplugged.
