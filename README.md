@@ -20,7 +20,7 @@ chezmoi init https://github.com/pwoodward/dotfiles.git
 
 ## Other tools
 
-- [hsklogin](https://github.com/mrszymon/hsk)
+ - [hsklogin](https://github.com/mrszymon/hsk)
 
 ## Additional Information
 
@@ -28,8 +28,8 @@ chezmoi init https://github.com/pwoodward/dotfiles.git
 
 ## Work specific setup
 
-- 1Password
-- Box drive
-- Slack
-- Teams
-- Office
+ - 1Password
+ - Box drive
+ - Slack
+ - Teams
+ - Office

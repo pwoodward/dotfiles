@@ -55,6 +55,7 @@ packages:
       - "zookeeper"
       - "kafka"
       - "kcat"
+      - "krunkit"
       - "kubernetes-cli"
       - "lf"
       - "mage"
@@ -67,6 +68,7 @@ packages:
       - "operator-sdk"
       - "podman"
       - "postgresql@17"
+      - "timescaledb"
       - "pre-commit"
       - "r"
       - "staticcheck"
@@ -93,3 +95,5 @@ packages:
     taps:
       - "minio/stable"
       - "FelixKratz/formulae"
+      - "timescale/tap"
+      - "slp/krunkit"
