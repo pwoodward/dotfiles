@@ -75,6 +75,10 @@ source $(brew --prefix nvm)/nvm.sh
 export GOBIN=~/tools/gobin
 export PATH="$PATH:$HOME/tools/gobin"
 
+if [[ -f $(which podman) ]]; then
+  export DOCKER_HOST="unix://$(podman machine inspect --format '{{ "{{" }}.ConnectionInfo.PodmanSocket.Path{{ "}}" }}')"
+fi
+
 # Ruby stuff for Jekyll
 #source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 #source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
