@@ -24,6 +24,8 @@ config.font_size = 15.0
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_kitty_keyboard = true
 
+config.audible_bell = "Disabled"
+
 config.visual_bell = {
 	fade_in_duration_ms = 75,
 	fade_out_duration_ms = 75,
