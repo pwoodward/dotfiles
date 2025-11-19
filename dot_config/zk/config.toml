@@ -60,7 +60,7 @@ colon-tags = true
 editor = "nvim"
 
 # Default shell used by aliases and commands.
-shell = "/usr/local/bin/zsh"
+shell = "/opt/homebrew/bin/zsh"
 
 # Pager used to scroll through long output.
 pager = "less -FIRX"
@@ -80,6 +80,9 @@ edlast = "zk edit --limit 1 --sort modified- $@"
 
 # Edit the notes selected interactively among the notes created the last two weeks.
 recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
+
+# create new note with given title
+nt = 'zk new --title "$*"'
 
 # LSP (EDITOR INTEGRATION)
 [lsp]
