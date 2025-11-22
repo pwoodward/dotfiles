@@ -1,6 +1,9 @@
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+{{ if eq .chezmoi.os "linux" }}
+export PATH=$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+{{ end }}
 
 # User configuration
 export EDITOR=nvim
