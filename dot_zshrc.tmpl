@@ -3,6 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 {{ if eq .chezmoi.os "linux" }}
 export PATH=$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+export SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
 {{ end }}
 
 # User configuration
