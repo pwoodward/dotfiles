@@ -44,7 +44,6 @@ packages:
     casks:
   darwin:
     brews:
-      - "1password-cli"
       - "cassandra"
       - "couchdb"
       - "delve"
@@ -85,6 +84,7 @@ packages:
       - "borders"
       - "yubico-piv-tool"
     casks:
+      - "1password-cli"
       - "wezterm"
       - "ghostty"
       - "devpod"
