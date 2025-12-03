@@ -4,6 +4,9 @@ brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.all.brews -}}
 brew {{ . | quote }}
 {{ end -}}
+{{ range .packages.all.casks -}}
+cask {{ . | quote }}
+{{ end -}}
 {{- if eq .chezmoi.os "darwin" -}}
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}
@@ -12,6 +15,14 @@ tap {{ . | quote }}
 brew {{ . | quote }}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
+{{ end -}}
+{{ end -}}
+{{- if eq .chezmoi.os "linux" -}}
+{{ range .packages.linux.brews -}}
+brew {{ . | quote }}
+{{ end -}}
+{{ range .packages.linux.casks -}}
 cask {{ . | quote }}
 {{ end -}}
 {{ end -}}

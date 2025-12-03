@@ -35,8 +35,13 @@ packages:
       - "zsh"
       - "zsh-completions"
       - "zsh-syntax-highlighting"
+    casks:
+      - "font-fira-code-nerd-font"
+      - "font-fira-mono-nerd-font"
+      - "font-hack-nerd-font"
   linux:
     brews:
+    casks:
   darwin:
     brews:
       - "cassandra"
@@ -84,9 +89,6 @@ packages:
       - "devpod"
       - "nikitabobko/tap/aerospace"
       - "firefox"
-      - "font-fira-code-nerd-font"
-      - "font-fira-mono-nerd-font"
-      - "font-hack-nerd-font"
       - "karabiner-elements"
       - "notunes"
       - "podman-desktop"
