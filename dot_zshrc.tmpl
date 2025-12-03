@@ -79,6 +79,11 @@ if [[ -f $(which podman) ]]; then
   export DOCKER_HOST="unix://$(podman machine inspect --format '{{ "{{" }}.ConnectionInfo.PodmanSocket.Path{{ "}}" }}')"
 fi
 
+# Secrets
+op inject -i "${HOME}/.config/zsh/secrets.zsh" | while read -r line; do
+  eval "$line"
+done
+
 # Ruby stuff for Jekyll
 #source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
 #source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
