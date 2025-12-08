@@ -26,6 +26,7 @@ packages:
       - "rustup"
       - "tmux"
       - "tree-sitter"
+      - "tree-sitter-cli"
       - "uv"
       - "yaml-language-server"
       - "yazi"
