@@ -1,6 +1,5 @@
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 {{ if eq .chezmoi.os "linux" }}
 export PATH=$HOME/.local/bin:$HOME/bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 export SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
@@ -65,7 +64,7 @@ alias kube="kubectl --kubeconfig ~/tmp/servers/cur.yaml -n aiops"
 alias kubee="kubectl --kubeconfig ~/tmp/servers/engolo.yaml -n aiops"
 alias kubel="kubectl --kubeconfig ~/tmp/servers/laamb.yaml -n aiops"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/ibm-semeru-open-17.jdk/Contents/Home
-export PATH="/usr/local/sbin:$PATH:$HOME/tools/bin:/usr/local/opt/postgresql@17/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:$HOME/tools/bin:/usr/local/opt/postgresql@17/bin:$PATH:$HOME/tools/gobin"
 export GOPRIVATE=github.ibm.com
 
 #export TERM_KEEP_DB_PATH=~/Library/CloudStorage/Box-Box/2vault/termkeep/data.db
