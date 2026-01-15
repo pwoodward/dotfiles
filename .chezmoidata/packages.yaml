@@ -95,6 +95,7 @@ packages:
       - "notunes"
       - "podman-desktop"
       - "semeru-jdk-open@17"
+      - "semeru-jdk-open@21"
       - "vimr"
       - "google-chrome"
     taps:
