@@ -3,3 +3,8 @@ input {
     tap
   }
 }
+
+// Set open-maximized to true for all windows.
+window-rule {
+    open-maximized true
+}
