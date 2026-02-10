@@ -58,6 +58,7 @@ packages:
       - "gdb"
       - "gh"
       - "helm"
+      - "hurl"
       - "jdtls"
       - "jless"
       - "zookeeper"
