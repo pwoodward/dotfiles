@@ -1,27 +1,42 @@
 function current_dir() {
-    local current_dir=$PWD
-    if [[ $current_dir == $HOME ]]; then
-        current_dir="~"
+    local dir=$PWD
+    if [[ $dir == $HOME ]]; then
+        dir="~"
     else
-        current_dir=${current_dir##*/}
+        dir=${dir##*/}
     fi
-    
-    echo $current_dir
+    echo $dir
 }
 
+# Original non-plugin tile update
+# function change_tab_title() {
+#     local title=$1
+#     command nohup zellij action rename-tab $title >/dev/null 2>&1
+# }
+
+# Change tab title using zellij-tab-name plugin
 function change_tab_title() {
     local title=$1
-    command nohup zellij action rename-tab $title >/dev/null 2>&1
+
+    # Optional: Truncate long names
+    if [[ ${#title} -gt 15 ]]; then
+        title="${title:0:12}..."
+    fi
+
+    # Escape special characters
+    title="${title//\\/\\\\}"
+    title="${title//\"/\\\"}"
+    title="${title//\{/\{\{}"
+    title="${title//\}/\}\}}"
+
+    zellij pipe \
+        --name change-tab-name \
+        -- "{\"pane_id\": \"$ZELLIJ_PANE_ID\", \"name\": \"{tab_position}: $title\"}" \
+        &>/dev/null &!
 }
 
 function set_tab_to_working_dir() {
-    local result=$?
     local title=$(current_dir)
-    # uncomment the following to show the exit code after a failed command
-    # if [[ $result -gt 0 ]]; then
-    #     title="$title [$result]" 
-    # fi
-
     change_tab_title $title
 }
 
@@ -30,6 +45,7 @@ function set_tab_to_command_line() {
     change_tab_title $cmdline
 }
 
+# Enable automatic tab naming in Zellij
 if [[ -n $ZELLIJ ]]; then
     add-zsh-hook precmd set_tab_to_working_dir
     #add-zsh-hook preexec set_tab_to_command_line
