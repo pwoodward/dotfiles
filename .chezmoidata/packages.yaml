@@ -83,8 +83,6 @@ packages:
       - "r"
       - "staticcheck"
       - "xh"
-      - "chruby"
-      - "ruby-install"
       - "borders"
       - "yubico-piv-tool"
     casks:

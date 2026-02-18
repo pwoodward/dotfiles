@@ -267,8 +267,9 @@ plugins {
 // eg. "file:/path/to/my-plugin.wasm"
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
-  https://github.com/Cynary/zellij-tab-name/releases/download/v0.4.2/zellij-tab-name.wasm
+  "https://github.com/Cynary/zellij-tab-name/releases/download/v0.4.2/zellij-tab-name.wasm"
 }
+
 web_client {
     font "monospace"
 }
