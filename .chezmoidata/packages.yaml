@@ -59,6 +59,7 @@ packages:
       - "gh"
       - "helm"
       - "hurl"
+      - "fish"
       - "jdtls"
       - "jless"
       - "zookeeper"
