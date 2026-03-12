@@ -84,9 +84,12 @@ if [[ -f $(which podman) ]]; then
 fi
 
 # Secrets
-op inject -i "${HOME}/.config/zsh/secrets.zsh" | while read -r line; do
-  eval "$line"
-done
+# Ignore this for vscode shell
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+  op inject -i "${HOME}/.config/zsh/secrets.zsh" | while read -r line; do
+    eval "$line"
+  done
+fi
 
 {{ end }}
 
