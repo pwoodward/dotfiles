@@ -83,14 +83,12 @@ if [[ -f $(which podman) ]]; then
   export TESTCONTAINERS_RYUK_DISABLED=true
 fi
 
-# Secrets
-# Ignore this for vscode shell
-if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+# Load secrets from 1pw
+function load_secrets() {
   op inject -i "${HOME}/.config/zsh/secrets.zsh" | while read -r line; do
     eval "$line"
   done
-fi
-
+}
 {{ end }}
 
 # Load Git completion
