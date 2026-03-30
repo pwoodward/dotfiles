@@ -26,6 +26,7 @@ packages:
       - "ripgrep"
       - "rnr"
       - "rustup"
+      - "television"
       - "tmux"
       - "tree-sitter"
       - "tree-sitter-cli"
