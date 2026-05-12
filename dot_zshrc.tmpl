@@ -89,6 +89,18 @@ function load_secrets() {
     eval "$line"
   done
 }
+
+function sync_fork() {
+  local branch=${1}
+
+  if [ -z "${branch}" ];then
+    echo "branch not provided"
+  fi
+
+  git checkout ${branch}
+  git pull upstream ${branch}
+  git push origin ${branch}
+}
 {{ end }}
 
 # Load Git completion

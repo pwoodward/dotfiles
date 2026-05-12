@@ -48,6 +48,7 @@ packages:
     casks:
   darwin:
     brews:
+      - "awscli"
       - "cassandra"
       - "couchdb"
       - "delve"
@@ -81,6 +82,7 @@ packages:
       - "podman"
       - "postgresql@17"
       - "timescaledb"
+      - "terraform"
       - "pre-commit"
       - "r"
       - "staticcheck"
@@ -101,6 +103,7 @@ packages:
       - "semeru-jdk-open@21"
       - "vimr"
       - "google-chrome"
+      - "tunnelblick"
     taps:
       - "minio/stable"
       - "FelixKratz/formulae"
