@@ -106,6 +106,7 @@ packages:
       - "vimr"
       - "google-chrome"
       - "tunnelblick"
+      - "openlogi"
     taps:
       - "minio/stable"
       - "FelixKratz/formulae"
