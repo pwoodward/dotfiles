@@ -96,7 +96,8 @@ format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [shell]
 fish_indicator = '󰈺'
-zsh_indicator = ''
+zsh_indicator = ''
+bash_indicator = '󱆃'
 style = "bg:#a3aed2"
 format = '[ $indicator ](bg:#a3aed2 fg:#090c0c)($style)'
 disabled = false
