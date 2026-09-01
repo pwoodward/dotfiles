@@ -6,7 +6,6 @@ name = "tokyo-night"
 
 [terminal]
 default_shell = "fish"
-new_cmd = "follow"
 
 [keys]
 prefix = "ctrl+space"
