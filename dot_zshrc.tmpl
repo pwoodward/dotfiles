@@ -24,6 +24,8 @@ alias la="eza -al"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim"
 alias c=bat
 alias tk=term_keep
+alias ds-upd="detect-secrets scan --update .secrets.baseline && detect-secrets audit .secrets.baseline"
+
 
 fpath=(~/.config/zsh/plugins/zsh-completions/src $fpath)
 
