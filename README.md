@@ -6,13 +6,13 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-2. Install Chezmoi
+1. Install Chezmoi
 
 ```
 brew install chezmoi
 ```
 
-3. Init chezmoi
+1. Init chezmoi
 
 ```
 chezmoi init https://github.com/pwoodward/dotfiles.git
@@ -20,7 +20,7 @@ chezmoi init https://github.com/pwoodward/dotfiles.git
 
 ## Other tools
 
- - [hsklogin](https://github.com/mrszymon/hsk)
+- [hsklogin](https://github.com/mrszymon/hsk)
 
 ## Additional Information
 
@@ -28,8 +28,15 @@ chezmoi init https://github.com/pwoodward/dotfiles.git
 
 ## Work specific setup
 
- - 1Password
- - Box drive
- - Slack
- - Teams
- - Office
+- 1Password
+- Box drive
+- Slack
+- Teams
+- Office
+
+## Herdr plugins
+
+```
+herdr plugin install zackshen/herdr-workspace
+herdr plugin install yuritada/numberer-manager
+```
