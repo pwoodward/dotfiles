@@ -7,3 +7,4 @@ abbr ll "eza -l"
 abbr la "eza -al"
 
 abbr ds-upd "detect-secrets scan --update .secrets.baseline && detect-secrets audit .secrets.baseline"
+abbr bob "~/.bob/hooks/herdr-bob.sh"

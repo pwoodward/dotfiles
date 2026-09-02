@@ -23,7 +23,7 @@ prefix = "ctrl+space"
 # open_worktree = ""    # optional, unset by default
 # remove_worktree = ""  # optional, unset by default; opens confirmation
 # rename_workspace = "prefix+shift+w"
-# close_workspace = "prefix+shift+d"
+close_workspace = "prefix+shift+d"
 # previous_workspace = "" # optional, unset by default
 # next_workspace = ""     # optional, unset by default
 # previous_agent = ""     # optional, unset by default
@@ -31,11 +31,11 @@ prefix = "ctrl+space"
 # focus_agent = ""        # optional indexed binding, e.g. "prefix+alt+1..9"
 # remote_image_paste = "ctrl+v" # only active in herdr --remote; empty disables raw-key image paste
 new_tab = "prefix+c"
-# rename_tab = "prefix+shift+t"
-previous_tab = "prefix+comma"
-next_tab = "prefix+period"
-switch_tab = "prefix+1..9"
-switch_workspace = "prefix+shift+1..9"   # optional indexed binding, e.g. "prefix+shift+1..9"
+rename_tab = "prefix+shift+t"
+previous_tab = "prefix+h"
+next_tab = "prefix+l"
+switch_tab = "prefix+shift+1..9"
+switch_workspace = "prefix+1..9"   # optional indexed binding, e.g. "prefix+shift+1..9"
 # close_tab = "prefix+shift+x"
 # rename_pane = "prefix+shift+p"
 # edit_scrollback = "prefix+e"
@@ -82,6 +82,12 @@ command = "fish"
 width = "80%"
 height = "80%"
 
+[[keys.command]]
+key = "prefix+shift+n"
+type = "plugin_action"
+command = "herdr-workspace.open"
+description = "New workspace from layout profile"
+
 # Legacy indexed shortcut config is still parsed for compatibility.
 # Prefer switch_tab, switch_workspace, and focus_agent for new configs.
 # [keys.indexed]
@@ -101,17 +107,40 @@ sidebar_start_collapsed = true
 # Set false to keep drag selection visible without copying; double-click still copies a word.
 copy_on_select = true
 
+agent_panel_sort = "spaces"
+
+prompt_new_tab_name = false
+
+window_title = "{workspace} {tab}"
+
+status_indicators = "symbols"
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  ["state_icon", "workspace", "tab"],
+  ["state_text"],
+]
+
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+]
+
+
 # Background notification popup delivery
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts
 # terminal = ask the outer terminal to show a desktop notification
 # system = ask the OS notification service directly
-# delivery = "off"
-# delay_seconds = 1
+delivery = "herdr"
+delay_seconds = 1
 
 [ui.toast.herdr]
-# position = "bottom-right"
+position = "bottom-right"
 
 [ui.toast.clipboard]
 # enabled = true
